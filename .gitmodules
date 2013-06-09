@@ -1,0 +1,3 @@
+[submodule "App/MvvmCross"]
+	path = App/MvvmCross
+	url = https://github.com/slodge/MvvmCross.git
