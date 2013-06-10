@@ -20,6 +20,7 @@
 
 using Cirrious.MvvmCross.ViewModels;
 using De.Dhoffmann.Mono.WCN.Core.ViewModels;
+using Cirrious.CrossCore.IoC;
 
 namespace De.Dhoffmann.Mono.WCN.Core
 {
@@ -32,6 +33,11 @@ namespace De.Dhoffmann.Mono.WCN.Core
 
 		public override void Initialize ()
 		{
+			CreatableTypes ()
+				.EndingWith ("Service")
+				.AsInterfaces ()
+				.RegisterAsLazySingleton ();
+
 			RegisterAppStart<WebChangedNotificationListViewModel> ();
 		}
 	}

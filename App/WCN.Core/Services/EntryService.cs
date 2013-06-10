@@ -18,32 +18,65 @@
  */
 
 
-using Cirrious.MvvmCross.ViewModels;
-using De.Dhoffmann.Mono.WCN.Core.Services;
+using System;
 using System.Collections.Generic;
 
-namespace De.Dhoffmann.Mono.WCN.Core.ViewModels
+namespace De.Dhoffmann.Mono.WCN.Core.Services
 {
-	public class WebChangedNotificationListViewModel : MvxViewModel
+	public class EntryService : IEntryService
 	{
-		public WebChangedNotificationListViewModel (IEntryService service)
+		public EntryService ()
 		{
-			Entries = service.SelectEntries ();
 		}
 
-		private List<Entry> entries;
-		public List<Entry> Entries
+		#region IEntryService implementation
+
+		public bool InsertEntry (Entry entry)
 		{
-			get 
-			{
-				return entries; 
-			}
-			set
-			{
-				entries = value;
-				RaisePropertyChanged (() => Entries);
-			}
+			return false;
 		}
+
+		public Entry SelectEntry (string name)
+		{
+			return null;
+		}
+
+		public List<Entry> SelectEntries ()
+		{
+			List<Entry> ret = new List<Entry> ();
+
+			Entry test = new Entry ()
+ 			{
+				Name = "TEST",
+				Intervall = 10,
+				Urls = new List<CheckUrl> ()
+			};
+
+			ret.Add (test);
+
+			test = new Entry ()
+			{
+				Name = "TEST 2",
+				Intervall = 10,
+				Urls = new List<CheckUrl> ()
+			};
+
+			ret.Add (test);
+
+			return ret;
+		}
+
+		public bool UpdateEntry (Entry entry)
+		{
+			return false;
+		}
+
+		public bool DeleteEntry (Entry entry)
+		{
+			return false;
+		}
+
+		#endregion
 	}
 }
 

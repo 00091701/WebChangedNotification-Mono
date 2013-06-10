@@ -18,32 +18,29 @@
  */
 
 
-using Cirrious.MvvmCross.ViewModels;
-using De.Dhoffmann.Mono.WCN.Core.Services;
-using System.Collections.Generic;
+using System;
 
-namespace De.Dhoffmann.Mono.WCN.Core.ViewModels
+namespace De.Dhoffmann.Mono.WCN.Core.Services
 {
-	public class WebChangedNotificationListViewModel : MvxViewModel
+	public class CheckUrl
 	{
-		public WebChangedNotificationListViewModel (IEntryService service)
+		public class RequestMethod
 		{
-			Entries = service.SelectEntries ();
+			public const string Get = "GET";
+			public const string Post = "POST";
 		}
 
-		private List<Entry> entries;
-		public List<Entry> Entries
+		public enum CheckType : int
 		{
-			get 
-			{
-				return entries; 
-			}
-			set
-			{
-				entries = value;
-				RaisePropertyChanged (() => Entries);
-			}
+			Change = 0,
+			String
 		}
+
+		public string Url { get; set; }
+		public RequestMethod HttpRequestMethod { get; set; }
+		public CheckType UrlCheckType { get; set; }
+		public string UrlCheckString { get; set; }
+		public bool PositiveCheck { get; set; }
 	}
 }
 

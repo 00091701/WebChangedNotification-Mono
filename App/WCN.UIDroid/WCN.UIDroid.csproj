@@ -46,7 +46,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="WebChangedNotificationListView.cs" />
+    <Compile Include="Views\WebChangedNotificationListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -60,6 +60,7 @@
       <Link>Resources\values\MvxBindingAttributes.xml</Link>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\WebChangedNotificationListView.axml" />
+    <AndroidResource Include="Resources\layout\WebChangedNotificationListView_Item.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

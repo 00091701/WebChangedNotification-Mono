@@ -81,9 +81,6 @@ namespace De.Dhoffmann.Mono.WCN.UIDroid
 			// aapt resource value: 0x7f040000
 			public const int MvxBindingTagUnique = 2130968576;
 			
-			// aapt resource value: 0x7f040001
-			public const int myButton = 2130968577;
-			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -99,6 +96,9 @@ namespace De.Dhoffmann.Mono.WCN.UIDroid
 			
 			// aapt resource value: 0x7f030000
 			public const int WebChangedNotificationListView = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int WebChangedNotificationListView_Item = 2130903041;
 			
 			static Layout()
 			{
